@@ -7,40 +7,54 @@ const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative z-10 pt-20 pb-10 border-t border-white/5 bg-brand-dark/50 backdrop-blur-xl">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
-          <div className="space-y-6">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-amber-500 rounded-xl flex items-center justify-center text-brand-dark font-black text-xl shadow-lg shadow-amber-500/20">
+    <footer id="footer" className="relative z-10 pt-12 pb-8 md:pt-20 md:pb-10 border-t border-white/5 bg-brand-dark/50 backdrop-blur-xl">
+      <div className="max-w-[1600px] mx-auto px-6 lg:px-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-10 md:mb-20">
+          <div className="space-y-4 md:space-y-6">
+            <motion.div 
+              whileHover={{ scale: 1.05 }}
+              className="flex items-center gap-3 group cursor-pointer"
+            >
+              <motion.div 
+                whileHover={{ rotate: 360 }}
+                transition={{ duration: 0.8, ease: "anticipate" }}
+                className="w-10 h-10 bg-amber-500 rounded-xl flex items-center justify-center text-brand-dark font-black text-xl shadow-lg shadow-amber-500/20 group-hover:shadow-amber-500/40 transition-all"
+              >
                 DG
-              </div>
-              <span className="text-xl font-black tracking-tighter uppercase italic text-white">Dwijesh Gontla</span>
-            </div>
-            <p className="text-brand-medium text-sm leading-relaxed max-w-xs">
+              </motion.div>
+              <span className="text-xl font-black tracking-tighter uppercase italic text-white group-hover:text-amber-400 transition-colors">Dwijesh Gontla</span>
+            </motion.div>
+            <motion.p 
+              whileHover={{ x: 5 }}
+              className="text-brand-medium text-sm leading-relaxed max-w-xs transition-transform"
+            >
               Systems Architect & Strategic Leader bridging the gap between elite engineering and organizational excellence.
-            </p>
+            </motion.p>
           </div>
 
           <div>
-            <h4 className="text-white font-black uppercase tracking-widest text-xs mb-6">Navigation</h4>
+            <h4 className="text-white font-black uppercase tracking-widest text-xs mb-4 md:mb-6">Navigation</h4>
             <ul className="space-y-4">
-              {['Home', 'Academics', 'Competitions', 'Skills', 'Future'].map((item) => (
-                <li key={item}>
+              {['About Me', 'Academics', 'Competitions', 'Skills', 'Future'].map((item) => (
+                <motion.li 
+                  key={item}
+                  whileHover={{ x: 10 }}
+                  className="transition-transform"
+                >
                   <a 
-                    href={item === 'Home' ? '/' : `/${item.toLowerCase()}`} 
+                    href={item === 'About Me' ? '/' : `/${item.toLowerCase()}`} 
                     className="text-brand-medium hover:text-amber-500 transition-colors text-sm font-bold tracking-tight"
                   >
                     {item}
                   </a>
-                </li>
+                </motion.li>
               ))}
             </ul>
           </div>
 
           <div>
-            <h4 className="text-white font-black uppercase tracking-widest text-xs mb-6">Quicklinks</h4>
-            <div className="flex gap-4 mb-6">
+            <h4 className="text-white font-black uppercase tracking-widest text-xs mb-4 md:mb-6">Quicklinks</h4>
+            <div className="flex gap-4 mb-4 md:mb-6">
               <motion.a
                 href="mailto:gdwijju@gmail.com"
                 whileHover={{ y: -5, scale: 1.1 }}
@@ -76,8 +90,8 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
-          <div className="space-y-6">
-            <h4 className="text-white font-black uppercase tracking-widest text-xs mb-6">Technical Focus</h4>
+          <div className="space-y-4 md:space-y-6">
+            <h4 className="text-white font-black uppercase tracking-widest text-xs mb-4 md:mb-6">Technical Focus</h4>
             <div className="p-4 bg-amber-500/5 border border-amber-500/20 rounded-2xl">
               <div className="flex items-center gap-2 mb-2">
                 <div className="w-2 h-2 bg-amber-500 rounded-full animate-pulse"></div>
@@ -90,7 +104,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-between items-center pt-10 border-t border-white/5 gap-6">
+        <div className="flex flex-col md:flex-row justify-between items-center pt-6 md:pt-10 border-t border-white/5 gap-4 md:gap-6">
           <p className="text-brand-medium text-[10px] font-black uppercase tracking-[0.2em]">
             © {currentYear} Dwijesh Gontla. All Rights Reserved.
           </p>

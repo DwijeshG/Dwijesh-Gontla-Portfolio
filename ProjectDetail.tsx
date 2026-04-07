@@ -11,7 +11,7 @@ interface ProjectDetailProps {
 
 const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack }) => {
   const isEnterpriseProject = project.title === 'Enterprise Network Architectures';
-  const isSecurityProject = project.title === 'Anti-Malware Browser Extension';
+  const isSecurityProject = project.title === 'Anti-Malware Browser Extension' || project.title === 'Defensive Grid Labs';
   const isBusinessProject = project.title === 'Summer Business Operations';
   const isUILProject = project.title === 'UIL Website Development';
 
@@ -95,7 +95,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack }) => {
             </h1>
           </motion.div>
 
-          <motion.div 
+            <motion.div 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.8 }}
@@ -111,10 +111,24 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack }) => {
               </div>
             </div>
             <div className="h-10 w-px bg-white/10 hidden md:block"></div>
-            <a href="mailto:gdwijju@gmail.com" className="flex items-center gap-3 text-brand-medium hover:text-white transition-colors group">
-              <Mail size={18} className="group-hover:text-amber-500 transition-colors" />
-              <span className="text-[12px] font-black uppercase tracking-[0.2em]">gdwijju@gmail.com</span>
-            </a>
+            <div className="flex flex-wrap items-center gap-6">
+              <a href="mailto:gdwijju@gmail.com" className="flex items-center gap-3 text-brand-medium hover:text-white transition-colors group">
+                <Mail size={18} className="group-hover:text-amber-500 transition-colors" />
+                <span className="text-[12px] font-black uppercase tracking-[0.2em]">gdwijju@gmail.com</span>
+              </a>
+              {project.websiteUrl && (
+                <a href={project.websiteUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-brand-medium hover:text-white transition-colors group">
+                  <Globe size={18} className="group-hover:text-amber-500 transition-colors" />
+                  <span className="text-[12px] font-black uppercase tracking-[0.2em]">Official Website</span>
+                </a>
+              )}
+              {project.githubUrl && (
+                <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-brand-medium hover:text-white transition-colors group">
+                  <Users size={18} className="group-hover:text-amber-500 transition-colors" />
+                  <span className="text-[12px] font-black uppercase tracking-[0.2em]">GitHub Repos</span>
+                </a>
+              )}
+            </div>
           </motion.div>
         </header>
 
@@ -320,7 +334,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack }) => {
                     <Star size={32} />
                   </div>
                   <h4 className="text-white font-black uppercase text-xl italic">Team Welfare</h4>
-                  <p className="text-brand-medium font-bold">Successfully implemented morale-boosting initiatives for 20+ staff members.</p>
+                  <p className="text-brand-medium font-bold">Directly supported and mentored 3 key team members, enhancing workplace morale.</p>
                 </div>
               </div>
             </section>
@@ -352,7 +366,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack }) => {
           </div>
         )}
 
-        {/* --- Anti-Malware Browser Extension --- */}
+        {/* --- Defensive Grid Labs (Security Project) --- */}
         {isSecurityProject && (
           <div className="space-y-24 md:space-y-40">
             <section className="space-y-10">
@@ -361,85 +375,89 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack }) => {
                 <div className="h-px flex-grow bg-amber-500/20"></div>
               </div>
               <p className="text-brand-light text-2xl md:text-5xl leading-[1.1] font-black tracking-tighter italic">
-                Nexus Sentinel: A <span className="text-amber-400">"Dual-Brain"</span> AI Security Architecture for the Modern Web.
+                Defensive Grid Labs: <span className="text-amber-400">Digital Sovereignty</span> & Founder-Led Architecture.
+              </p>
+              <p className="text-brand-medium text-xl font-bold leading-relaxed max-w-3xl">
+                Founded by Dwijesh Gontla, who serves as the official Founder and 100% stakeholder, Defensive Grid Labs operates on the principle that security should be "Built with purpose and protected with intent." We provide elite cybersecurity solutions that prioritize user privacy through local-first processing and transparent protocols.
               </p>
             </section>
 
             <section className="space-y-16">
               <h3 className="text-white text-3xl font-black tracking-tighter uppercase italic flex items-center gap-4">
                 <Shield className="text-amber-500" />
-                Advanced Feature Suite
+                Core Philosophy
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {[
                   {
-                    title: 'Hybrid Intelligence',
-                    icon: Cpu,
-                    points: [
-                      'Edge AI (Local Inference): Uses tf.min.js for instant, private scoring of URLs.',
-                      'Cloud Escalation: Leverages Gemini 1.5 Flash API for deep semantic reasoning of "Grey Area" threats.',
-                      'Nexus Neural Sidecar: SharedWorker maintains a synchronized model across all tabs.'
-                    ]
-                  },
-                  {
-                    title: 'Network Hardening',
-                    icon: Globe,
-                    points: [
-                      'Nexus Sentinel: High-performance Declarative Net Request (DNR) gatekeeper.',
-                      'Elite Blocklists: Integrated JSON rulesets for malware, phishing, and trackers.',
-                      'Forced Protocol Upgrades: Automatic http to https upgrades.',
-                      'Header Injection: Global CSP and X-Frame-Options enforcement.'
-                    ]
-                  },
-                  {
-                    title: 'Data Privacy',
-                    icon: Eye,
-                    points: [
-                      'Fingerprint Shield: Hardware-seeded noise injection to scramble Canvas/WebGL fingerprints.',
-                      'Anti-Keylogger Defense: Intercepts and blocks script-based keystroke scraping.',
-                      'Referrer Masking: Strips Referer headers from cross-origin requests.'
-                    ]
-                  },
-                  {
-                    title: 'Post-Quantum Encryption',
+                    title: 'Zero-Knowledge Architecture',
                     icon: Lock,
-                    points: [
-                      'Kyber768 Integration: Uses crystals-kyber.js for quantum-safe key generation.',
-                      'Nexus-PQ Envelopes: Lattice-based cryptography for webpage text encryption.'
-                    ]
+                    desc: 'The system is designed so that the provider has zero access to user data. Encryption keys are managed locally, ensuring absolute privacy.'
                   },
                   {
-                    title: 'Active Defense',
-                    icon: Activity,
-                    points: [
-                      'Chaos Engine: Red Team worker generating synthetic threats to test AI optimal states.',
-                      'Self-Healing Loop: Reinforcement learning in offscreen.js fine-tunes local neural weights.',
-                      'Cookie Annihilator: Rejects "Reject All" buttons automatically.'
-                    ]
+                    title: 'Hybrid Intelligence Model',
+                    icon: Cpu,
+                    desc: 'A unique 90/10 architectural split: 90% of processing happens locally to preserve privacy, while 10% uses elite cloud intelligence for global threat analysis.'
                   },
                   {
-                    title: 'Visual Intel & HUD',
-                    icon: BarChart3,
-                    points: [
-                      'Interactive Copilot: ShadowDOM based real-time security score overlay.',
-                      'SVG Threat Visualizer: React-based dashboard mapping IP, DNS, and system health.'
-                    ]
+                    title: 'Privacy-First & Local-First',
+                    icon: Eye,
+                    desc: 'Data stays on the user\'s computer, never leaving their physical control unless explicitly authorized for anonymized threat detection.'
+                  },
+                  {
+                    title: 'Building in Public',
+                    icon: Users,
+                    desc: 'A commitment to transparency by open-sourcing core protocols like nexus-shield-core and grid-protocol.'
                   }
-                ].map((feature, i) => (
-                  <div key={i} className="p-10 royal-card rounded-[2.5rem] space-y-8 hover:border-amber-500/30 transition-all group">
+                ].map((item, i) => (
+                  <div key={i} className="p-10 royal-card rounded-[2.5rem] space-y-6 hover:border-amber-500/30 transition-all group">
                     <div className="w-14 h-14 bg-amber-500/10 rounded-2xl flex items-center justify-center text-amber-500 group-hover:scale-110 transition-transform">
-                      <feature.icon size={28} />
+                      <item.icon size={28} />
                     </div>
-                    <div className="space-y-6">
-                      <h4 className="text-white font-black uppercase text-lg tracking-tight italic">{feature.title}</h4>
-                      <ul className="space-y-4">
-                        {feature.points.map((p, pi) => (
-                          <li key={pi} className="flex items-start gap-3 text-brand-medium text-sm font-bold leading-relaxed">
-                            <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-amber-500/40 shrink-0"></div>
-                            {p}
-                          </li>
-                        ))}
-                      </ul>
+                    <div className="space-y-4">
+                      <h4 className="text-white font-black uppercase text-lg tracking-tight italic">{item.title}</h4>
+                      <p className="text-brand-medium text-sm font-bold leading-relaxed">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            <section className="space-y-16">
+              <h3 className="text-white text-3xl font-black tracking-tighter uppercase italic flex items-center gap-4">
+                <Activity className="text-amber-500" />
+                Key Products & Features
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {[
+                  {
+                    title: 'Nexus SOC',
+                    icon: BarChart3,
+                    desc: 'A high-fidelity, real-time dashboard for monitoring global threat vectors and system integrity.'
+                  },
+                  {
+                    title: 'Nexus Shield',
+                    icon: ShieldCheck,
+                    desc: 'A browser-level protection engine that blocks advanced intrusion attempts.'
+                  },
+                  {
+                    title: 'Sovereign Vault',
+                    icon: Database,
+                    desc: 'Local-first encrypted storage for sensitive digital assets.'
+                  },
+                  {
+                    title: 'Global Grid',
+                    icon: Globe,
+                    desc: 'Real-time monitoring of global network health across major AWS regions.'
+                  }
+                ].map((product, i) => (
+                  <div key={i} className="p-8 royal-card rounded-3xl space-y-6 hover:border-amber-500/30 transition-all group">
+                    <div className="w-12 h-12 bg-amber-500/10 rounded-xl flex items-center justify-center text-amber-500 group-hover:rotate-12 transition-transform">
+                      <product.icon size={24} />
+                    </div>
+                    <div className="space-y-3">
+                      <h4 className="text-white font-black uppercase text-sm tracking-tight italic">{product.title}</h4>
+                      <p className="text-brand-medium text-[11px] font-bold leading-relaxed">{product.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -453,10 +471,10 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack }) => {
               </h3>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                 {[
-                  { name: 'TensorFlow.js', level: 'Advanced', icon: Cpu },
-                  { name: 'Gemini API', level: 'Advanced', icon: Sparkles },
-                  { name: 'Kyber768', level: 'Advanced', icon: Lock },
-                  { name: 'DNR Engine', level: 'Expert', icon: Shield }
+                  { name: 'Zero-Knowledge', level: 'Core', icon: Lock },
+                  { name: 'Hybrid AI', level: '90/10 Split', icon: Cpu },
+                  { name: 'Nexus SOC', level: 'Real-time', icon: BarChart3 },
+                  { name: 'AWS Global', level: 'Monitoring', icon: Globe }
                 ].map((tech, i) => (
                   <div key={i} className="p-6 royal-card rounded-2xl border-white/5 flex flex-col items-center text-center gap-4">
                     <div className="w-12 h-12 bg-amber-500/10 rounded-xl flex items-center justify-center text-amber-500">

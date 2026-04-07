@@ -16,9 +16,16 @@ export interface Project {
   tags: string[];
   icon: string;
   image?: string;
+  websiteUrl?: string;
+  githubUrl?: string;
+}
+
+export interface Skill {
+  name: string;
+  link?: string;
 }
 
 export interface SkillCategory {
   title: string;
-  skills: string[];
+  skills: (string | Skill)[];
 }

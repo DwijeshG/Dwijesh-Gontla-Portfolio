@@ -1,209 +1,161 @@
-
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useRef } from 'react';
+import { motion, useScroll, useTransform, useInView } from 'framer-motion';
+import { 
+  Cpu, 
+  Code, 
+  Shield, 
+  Terminal, 
+  Layers, 
+  ExternalLink, 
+  ChevronDown, 
+  Globe, 
+  Zap, 
+  Database, 
+  Cloud, 
+  Lock,
+  Monitor,
+  Server,
+  Activity,
+  Target,
+  Trophy,
+  Award
+} from 'lucide-react';
 import Projects from '../components/Projects';
-import { MASTERY_ITEMS } from '../constants';
-import { Briefcase, ExternalLink } from 'lucide-react';
+import ExploreMore from '../components/ExploreMore';
+import SkillsShowcase from '../components/SkillsShowcase';
 
 interface SkillsPageProps {
   onSelectProject: (project: any) => void;
 }
 
+const Section = ({ children, className = "", id = "" }: { children: React.ReactNode, className?: string, id?: string }) => {
+  return (
+    <section id={id} className={`relative flex flex-col items-center justify-center px-6 py-16 md:py-24 overflow-hidden ${className}`}>
+      {children}
+    </section>
+  );
+};
+
+const Hero = () => {
+  return (
+    <section className="relative min-h-screen bg-black flex flex-col items-center justify-center text-center px-6 py-32">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(245,158,11,0.08),transparent_70%)]" />
+      <div className="absolute inset-0 bg-grid opacity-20" />
+      
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+        className="relative z-10"
+      >
+        <motion.div 
+          initial={{ scale: 0.8, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ delay: 0.2, duration: 0.8 }}
+          className="inline-block text-brand-medium font-display text-sm md:text-base font-black tracking-[0.6em] uppercase mb-10 border border-brand-medium/30 px-8 py-3 rounded-full bg-brand-medium/5 backdrop-blur-md shadow-[0_0_30px_rgba(245,158,11,0.1)]"
+        >
+          Technical Expertise
+        </motion.div>
+        <h1 className="font-display text-8xl md:text-[12rem] lg:text-[15rem] font-bold tracking-tighter leading-[0.8] mb-14 text-white">
+          Skills <br /> 
+          <span className="text-gradient">& Tech.</span>
+        </h1>
+        <p className="font-display text-xl md:text-4xl font-medium tracking-tight text-gray-400 max-w-4xl mx-auto leading-tight opacity-80 mb-12">
+          A showcase of technical proficiency, engineering foundations, and creative problem-solving.
+        </p>
+
+        <div className="flex flex-wrap justify-center gap-6">
+          <motion.a
+            href="https://github.com/gdwijju"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.05, y: -5 }}
+            whileTap={{ scale: 0.95 }}
+            className="flex items-center gap-3 px-8 py-4 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 hover:border-amber-500/50 transition-all group"
+          >
+            <Globe className="w-5 h-5 text-amber-500" />
+            <span className="font-display font-bold text-white tracking-widest uppercase text-sm">GitHub Profile</span>
+            <ExternalLink className="w-4 h-4 text-gray-500 group-hover:text-amber-500 transition-colors" />
+          </motion.a>
+          <motion.a
+            href="https://www.credly.com/users/dwijesh-gontla"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.05, y: -5 }}
+            whileTap={{ scale: 0.95 }}
+            className="flex items-center gap-3 px-8 py-4 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 hover:border-amber-500/50 transition-all group"
+          >
+            <Award className="w-5 h-5 text-amber-500" />
+            <span className="font-display font-bold text-white tracking-widest uppercase text-sm">Credly Badges</span>
+            <ExternalLink className="w-4 h-4 text-gray-500 group-hover:text-amber-500 transition-colors" />
+          </motion.a>
+        </div>
+      </motion.div>
+
+      <motion.div 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.8, duration: 1 }}
+        className="absolute bottom-16 flex flex-col items-center gap-6"
+      >
+        <span className="text-gray-600 text-[11px] font-black tracking-[0.5em] uppercase">Initialize Exploration</span>
+        <motion.div 
+          animate={{ y: [0, 12, 0] }}
+          transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <ChevronDown className="w-8 h-8 text-brand-medium opacity-50" />
+        </motion.div>
+      </motion.div>
+    </section>
+  );
+};
+
+const ProjectsShowcase = ({ onSelectProject }: { onSelectProject: (project: any) => void }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: false, amount: 0.3 });
+
+  return (
+    <section className="bg-black relative flex flex-col items-center justify-center px-6 pt-8 md:pt-12 pb-16 md:pb-24 overflow-hidden">
+      <div ref={ref} className="container mx-auto relative z-10">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-12">
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -40 }}
+            className="max-w-3xl"
+          >
+            <div className="flex items-center gap-6 mb-12">
+              <div className="p-5 bg-amber-500/20 rounded-3xl border border-amber-500/30">
+                <Monitor className="w-10 h-10 text-amber-500" />
+              </div>
+              <span className="font-display text-2xl font-bold text-amber-500 tracking-[0.3em] uppercase">Applied Knowledge</span>
+            </div>
+            <h2 className="font-display text-8xl md:text-[11rem] font-bold tracking-tighter mb-12 text-white leading-[0.8]">
+              Project <br /> <span className="text-gradient">Showcase.</span>
+            </h2>
+          </motion.div>
+        </div>
+        
+        <Projects onSelectProject={onSelectProject} />
+      </div>
+    </section>
+  );
+};
+
 const SkillsPage: React.FC<SkillsPageProps> = ({ onSelectProject }) => {
   return (
-    <div className="space-y-32 md:space-y-48">
-      {/* Page Header */}
-      <section className="relative pt-12">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[1px] bg-gradient-to-r from-transparent via-amber-500/20 to-transparent"></div>
-        <div className="flex flex-col items-center text-center space-y-8">
-          <div className="space-y-4">
-            <motion.h1 
-              initial={{ opacity: 0, y: 20, filter: 'blur(10px)' }}
-              animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-              className="text-5xl md:text-8xl font-black tracking-tighter uppercase italic gradient-gold"
-            >
-              Technical <span className="text-white">Skill Set</span>
-            </motion.h1>
-            <motion.p 
-              initial={{ opacity: 0, y: 20, filter: 'blur(5px)' }}
-              animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-              transition={{ delay: 0.2, duration: 1, ease: [0.16, 1, 0.3, 1] }}
-              className="text-brand-medium text-lg md:text-2xl font-bold tracking-tight max-w-3xl mx-auto italic"
-            >
-              A comprehensive breakdown of cybersecurity expertise, network architectures, and technical mastery.
-            </motion.p>
-          </div>
-        </div>
-      </section>
-
-      {/* Coding Languages Section */}
-      <motion.section 
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="royal-card p-10 md:p-16 rounded-[3rem] border-amber-500/20"
-      >
-        <div className="flex flex-col lg:flex-row gap-12 items-start">
-          <div className="lg:w-1/3 space-y-6">
-            <div className="space-y-4">
-              <h2 className="text-3xl md:text-4xl font-black tracking-tighter uppercase italic gradient-gold inline-block">Coding Languages</h2>
-              <div className="h-1.5 w-24 bg-amber-500 rounded-full shadow-[0_0_20px_rgba(245,158,11,0.4)]"></div>
-            </div>
-            <p className="text-brand-medium text-lg font-bold leading-relaxed italic">
-              "I am currently learning cybersecurity and data management too."
-            </p>
-            <div className="pt-4">
-              <a 
-                href="https://www.credly.com/users/dwijesh-gontla" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 px-8 py-4 bg-amber-500 text-black text-[10px] font-black uppercase tracking-[0.3em] rounded-full hover:bg-amber-400 transition-all shadow-xl shadow-amber-500/10 group"
-              >
-                View Credly Profile
-                <ExternalLink size={14} className="group-hover:translate-x-1 transition-transform" />
-              </a>
-            </div>
-          </div>
-
-          <div className="lg:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-8">
-            <div className="space-y-6">
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-amber-500/10 rounded-xl flex items-center justify-center text-amber-500 font-black text-xs">C++</div>
-                <div>
-                  <h4 className="text-white font-black uppercase tracking-widest text-sm">C++</h4>
-                  <p className="text-white/40 text-[10px] font-bold uppercase tracking-tighter">Competitive Programming & Algorithms</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-amber-500/10 rounded-xl flex items-center justify-center text-amber-500 font-black text-xs">PY</div>
-                <div>
-                  <h4 className="text-white font-black uppercase tracking-widest text-sm">Python</h4>
-                  <p className="text-amber-500 text-[10px] font-black uppercase tracking-tighter">Automation, AI/ML & Peer Instruction</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-amber-500/10 rounded-xl flex items-center justify-center text-amber-500 font-black text-xs">JS</div>
-                <div>
-                  <h4 className="text-white font-black uppercase tracking-widest text-sm">Javascript</h4>
-                  <p className="text-white/40 text-[10px] font-bold uppercase tracking-tighter mb-1">Full-Stack Logic & Web Apps</p>
-                  <a href="https://coursera.org/share/68da5cfa89be5ff9cf1bc10a5c5c9f43" target="_blank" rel="noopener noreferrer" className="text-amber-500/60 text-[10px] font-bold uppercase tracking-tighter hover:text-amber-500 transition-colors flex items-center gap-1">
-                    Certification <ExternalLink size={10} />
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <div className="space-y-6">
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-amber-500/10 rounded-xl flex items-center justify-center text-amber-500 font-black text-xs">SEC</div>
-                <div>
-                  <h4 className="text-white font-black uppercase tracking-widest text-sm">Cybersecurity</h4>
-                  <p className="text-amber-500 text-[10px] font-black uppercase tracking-tighter">Network Security & Ethical Hacking</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-amber-500/10 rounded-xl flex items-center justify-center text-amber-500 font-black text-xs">H5</div>
-                <div>
-                  <h4 className="text-white font-black uppercase tracking-widest text-sm">HTML 5</h4>
-                  <p className="text-white/40 text-[10px] font-bold uppercase tracking-tighter mb-1">Semantic Web & Accessibility</p>
-                  <a href="https://coursera.org/share/5f1fe0883d09ba267dfd25feac301448" target="_blank" rel="noopener noreferrer" className="text-amber-500/60 text-[10px] font-bold uppercase tracking-tighter hover:text-amber-500 transition-colors flex items-center gap-1">
-                    Certification <ExternalLink size={10} />
-                  </a>
-                </div>
-              </div>
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-amber-500/10 rounded-xl flex items-center justify-center text-amber-500 font-black text-xs">C3</div>
-                <div>
-                  <h4 className="text-white font-black uppercase tracking-widest text-sm">CSS3</h4>
-                  <p className="text-white/40 text-[10px] font-bold uppercase tracking-tighter mb-1">Modern Styling & Responsive UI</p>
-                  <a href="https://coursera.org/share/c241c78ad3b690f2d96fd229fa8b2545" target="_blank" rel="noopener noreferrer" className="text-amber-500/60 text-[10px] font-bold uppercase tracking-tighter hover:text-amber-500 transition-colors flex items-center gap-1">
-                    Certification <ExternalLink size={10} />
-                  </a>
-                </div>
-              </div>
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-amber-500/10 rounded-xl flex items-center justify-center text-amber-500 font-black text-xs">GH</div>
-                <div>
-                  <h4 className="text-white font-black uppercase tracking-widest text-sm">GitHub</h4>
-                  <p className="text-amber-500 text-[10px] font-black uppercase tracking-tighter mb-1">Version Control & Collaborative Dev</p>
-                  <a href="https://github.com/DwijeshG" target="_blank" rel="noopener noreferrer" className="text-amber-500/60 text-[10px] font-bold uppercase tracking-tighter hover:text-amber-500 transition-colors flex items-center gap-1">
-                    View Profile <ExternalLink size={10} />
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </motion.section>
-
-      <div className="grid grid-cols-1 gap-16 lg:gap-24">
-        <div className="w-full">
-          <Projects onSelectProject={onSelectProject} />
-        </div>
-      </div>
+    <main className="bg-black text-white selection:bg-amber-500 selection:text-black">
+      <div className="noise-overlay" />
+      <Hero />
       
-      {/* MASTERY SECTION */}
-      <div id="mastery" className="scroll-mt-32 md:scroll-mt-56 space-y-12 md:space-y-16">
-        <div className="space-y-4">
-          <h2 className="text-3xl md:text-4xl font-black tracking-tighter uppercase italic gradient-gold inline-block">Distinguished Mastery</h2>
-          <div className="h-1.5 w-24 bg-amber-500 rounded-full shadow-[0_0_20px_rgba(245,158,11,0.4)]"></div>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
-          {MASTERY_ITEMS.map((item, idx) => (
-            <motion.div 
-              key={idx} 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.05, duration: 0.5 }}
-              className="royal-card group relative flex flex-col overflow-hidden rounded-[2.5rem] border border-white/5 hover:border-amber-500/40 transition-all duration-700 hover:shadow-[0_20px_80px_-20px_rgba(245,158,11,0.25)] hover:-translate-y-2 bg-brand-dark/40 backdrop-blur-xl p-10"
-            >
-              {/* Background Glow Effect */}
-              <div className="absolute inset-0 bg-amber-500/5 blur-[80px] opacity-0 group-hover:opacity-100 transition-opacity duration-1000"></div>
-              
-              {/* Micro-grid pattern */}
-              <div className="absolute inset-0 opacity-[0.02] pointer-events-none">
-                <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, white 0.5px, transparent 0)', backgroundSize: '24px 24px' }}></div>
-              </div>
-
-              <div className="relative z-10 space-y-8 h-full flex flex-col">
-                {/* Icon Header */}
-                <div className="flex justify-between items-start">
-                  <div className="w-16 h-16 bg-amber-500/10 backdrop-blur-2xl rounded-2xl flex items-center justify-center text-4xl border border-amber-500/20 shadow-inner group-hover:bg-amber-500/20 group-hover:border-amber-500/40 transition-all duration-700">
-                    {item.icon}
-                  </div>
-                  <div className="px-4 py-1.5 bg-amber-500/10 border border-amber-500/20 rounded-full">
-                    <p className="text-[10px] text-amber-500 font-black uppercase tracking-[0.3em] leading-none">{item.tag}</p>
-                  </div>
-                </div>
-                
-                {/* Content Area */}
-                <div className="space-y-4 flex-grow">
-                  <h4 className="font-black text-white text-2xl md:text-3xl tracking-tighter group-hover:text-amber-400 transition-colors duration-700 leading-none">
-                    {item.title}
-                  </h4>
-                  <p className="text-brand-medium text-sm md:text-base leading-relaxed font-medium opacity-70 group-hover:opacity-100 transition-opacity duration-700">
-                    {item.desc}
-                  </p>
-                </div>
-
-                {/* Decorative Accent Line */}
-                <div className="h-[1px] w-full bg-white/5 overflow-hidden rounded-full mt-4">
-                  <motion.div 
-                    initial={{ x: '-100%' }}
-                    whileInView={{ x: '0%' }}
-                    transition={{ delay: 0.5 + idx * 0.05, duration: 1.5, ease: "circOut" }}
-                    className="h-full w-full bg-gradient-to-r from-transparent via-amber-500/40 to-transparent"
-                  />
-                </div>
-              </div>
-            </motion.div>
-          ))}
+      <div className="relative z-10">
+        <SkillsShowcase />
+        <ProjectsShowcase onSelectProject={onSelectProject} />
+        
+        <div className="py-32 bg-black">
+          <ExploreMore />
         </div>
       </div>
-    </div>
+    </main>
   );
 };
 
