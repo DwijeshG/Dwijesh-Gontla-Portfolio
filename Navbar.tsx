@@ -55,8 +55,8 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
               <img src="/logo.png" alt="DG Logo" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
             </div>
             <div className="hidden xl:flex flex-col">
-              <span className="text-white font-black text-[clamp(9px,0.7vw,12px)] uppercase tracking-widest leading-none">Founder & Systems Architect</span>
-              <span className="text-amber-500 font-black text-[clamp(7px,0.5vw,9px)] uppercase tracking-[0.2em] mt-1">Defensive Grid Labs</span>
+              <span className="text-white font-black text-[clamp(9px,0.7vw,12px)] uppercase tracking-widest leading-none">Cybersecurity Researcher</span>
+              <span className="text-amber-500 font-black text-[clamp(7px,0.5vw,9px)] uppercase tracking-[0.2em] mt-1">Specializing in Zero-Knowledge & AI Security</span>
             </div>
           </Link>
           
@@ -104,7 +104,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
               className="hidden sm:flex items-center gap-2.5 px-[clamp(1.2rem,2vw,2.5rem)] py-[clamp(0.4rem,0.75vw,0.9rem)] rounded-full text-[clamp(9px,0.65vw,10px)] font-black uppercase tracking-[0.25em] bg-amber-500 text-black hover:bg-amber-400 transition-all shadow-xl shadow-amber-500/10 group/btn"
             >
               <Mail className="w-3 h-3 md:w-3.5 md:h-3.5" />
-              CONNECT & RESUME
+              LEARN MORE
               <ChevronRight className="w-3 h-3 md:w-3.5 md:h-3.5 group-hover:translate-x-1 transition-transform" />
             </motion.a>
 
@@ -165,7 +165,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
                     className="flex items-center justify-center gap-4 py-6 bg-amber-500 text-black text-[12px] font-black uppercase tracking-widest rounded-2xl shadow-2xl shadow-amber-500/10 active:scale-95 transition-all"
                   >
                     <Mail className="w-4.5 h-4.5" />
-                    CONNECT & RESUME
+                    LEARN MORE
                   </a>
                 </div>
               </div>

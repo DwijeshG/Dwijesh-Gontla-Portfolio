@@ -42,6 +42,19 @@ export const CLUBS = [
 
 export const EXTRACURRICULARS = [
   {
+    id: 'community-service-logistics',
+    title: 'Community Service & Logistics',
+    role: 'Event Coordinator',
+    desc: 'Coordinating large-scale community events with 1,000+ attendees, managing complex food logistics and financial transaction integrity.',
+    icon: '🤝',
+    image: 'https://images.unsplash.com/photo-1559027615-cd2671c15b82?auto=format&fit=crop&q=80&w=1200&h=800',
+    tags: ['Service', 'Logistics', 'Leadership'],
+    metrics: [
+      { label: 'Hours Dedicated', value: '100+' },
+      { label: 'Event Scale', value: '1,000+ People' }
+    ]
+  },
+  {
     id: 'code-4-change',
     title: 'Code 4 Change',
     role: 'Treasurer & Intern',
@@ -98,7 +111,7 @@ export const EXTRACURRICULARS = [
 export const PROJECTS: Project[] = [
   {
     title: 'Defensive Grid Labs',
-    description: 'An elite cybersecurity firm focused on Digital Sovereignty and Zero-Knowledge Architecture. Founded by Dwijesh Gontla, who serves as the official Founder and 100% stakeholder, the company operates on the principle that security should be "Built with purpose and protected with intent." This project showcases a system where privacy is absolute, with 90% of processing happening locally and 10% using elite cloud intelligence for global threat analysis.',
+    description: 'An elite cybersecurity firm focused on Digital Sovereignty and Zero-Knowledge Architecture. The company operates on the principle that security should be "Built with purpose and protected with intent." This project showcases a system where privacy is absolute, with 90% of processing happening locally and 10% using elite cloud intelligence for global threat analysis.',
     tags: ['Zero-Knowledge', 'Cyber Sovereignty', 'Hybrid Intelligence', 'Nexus SOC'],
     icon: '🛡️',
     image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1200&h=800',
@@ -107,17 +120,10 @@ export const PROJECTS: Project[] = [
   },
   {
     title: 'Summer Business Operations',
-    description: 'Strategic oversight and operational management of a high-volume General Store and Supermarket enterprise. I led a diverse team of employees, reporting directly to the CEO, CFO, Founder, and Managing Director. My responsibilities encompassed sophisticated warehouse management and inventory control, financial transaction integrity, and the implementation of employee welfare initiatives to ensure peak organizational performance and workplace satisfaction.',
+    description: 'Strategic oversight and operational management of a high-volume General Store and Supermarket enterprise. I led a diverse team of employees, reporting directly to executive leadership. My responsibilities encompassed sophisticated warehouse management and inventory control, financial transaction integrity, and the implementation of employee welfare initiatives to ensure peak organizational performance and workplace satisfaction.',
     tags: ['Operations', 'Leadership', 'Inventory Control', 'Global Business'],
     icon: '🛒',
     image: 'https://images.unsplash.com/photo-1534452203293-494d7ddbf7e0?auto=format&fit=crop&q=80&w=1200&h=800'
-  },
-  {
-    title: 'Enterprise Network Architectures',
-    description: 'Advanced architecture of multi-site network topologies using industry-standard Cisco protocols. I self-learned these complex systems through the Cisco Networking Academy (NetAcad), engaging in hundreds of hours of hands-on experimentation. This project involves the implementation of robust VLAN segmentation, OSPF routing, and multi-layered security protocols to ensure high availability and data integrity across distributed enterprise environments.',
-    tags: ['Cisco Networking', 'NetAcad', 'VLAN', 'OSPF'],
-    icon: '🌐',
-    image: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80&w=1200&h=800'
   },
   {
     title: 'UIL Website Development',
@@ -142,7 +148,7 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
   },
   {
     title: 'Infrastructure & Security',
-    skills: ['Cisco Networking', 'Cloudflare', 'VLAN/OSPF']
+    skills: ['Cloudflare']
   },
   {
     title: 'Professional & Business',
@@ -154,7 +160,7 @@ export const PROFESSIONAL_PHILOSOPHY = `"It is not about how you start life, but
 
 export const UIL_PHILOSOPHY = `"Competition is not just about the rank; it's about the discipline of preparation and the resilience required to perform under pressure. As a team captain and individual competitor, I strive to elevate not only my own standards but also the collective ambition of my peers."`;
 
-export const BIO_SUMMARY = `A 15-year-old scholar and technical architect at Gateway College Prep and ACC, maintaining a 3.94 unweighted GPA. A consistent A Honor Roll student and AP scholar with perfect 5s on Human Geography and CSP. Currently on track to complete an Associate's Degree in high school through strategic Computer Science coursework at ACC.`;
+export const BIO_SUMMARY = `A 15-year-old scholar and cybersecurity researcher at Gateway College Prep and ACC, maintaining a 3.94 unweighted GPA. A consistent A Honor Roll student and AP scholar with perfect 5s on Human Geography and CSP. Currently on track to complete an Associate's Degree in high school through strategic Computer Science coursework at ACC.`;
 
 export const BIO_HIGHLIGHTS = [
   { label: 'Academic', value: 'Pursuing ACC', sub: 'Associate Degree' },

@@ -1,10 +1,10 @@
-# Dwijesh Gontla | Systems Architect Portfolio
+# Dwijesh Gontla | Cybersecurity Researcher Portfolio
 
-A high-performance, professional portfolio showcasing systems architecture, cybersecurity expertise, and academic excellence. This application is built with modern web technologies to provide a seamless, interactive experience for recruiters and collaborators.
+A high-performance, professional portfolio showcasing cybersecurity research, expertise, and academic excellence. This application is built with modern web technologies to provide a seamless, interactive experience for recruiters and collaborators.
 
 ## 🚀 Features
 
-- **Dynamic Systems Architecture:** Interactive breakdown of technical skill sets and networking expertise.
+- **Dynamic Technical Roadmap:** Interactive breakdown of technical skill sets and networking expertise.
 - **Academic Excellence Tracking:** Real-time visualization of GPA, class standing, and institutional recognition.
 - **Recruitment Outreach:** Comprehensive tracking of outreach from top-tier universities (Columbia, Brown, UT Austin, etc.).
 - **Glassmorphism UI:** A modern, high-contrast interface with gold/amber accents and blurred surfaces.

@@ -473,7 +473,7 @@ const FuturePage: React.FC = () => {
             <div className="h-1.5 w-24 bg-amber-500 rounded-full shadow-[0_0_20px_rgba(245,158,11,0.4)]"></div>
           </div>
           <p className="text-brand-medium text-lg font-bold max-w-md italic">
-            A structured path toward technical mastery and leadership in systems architecture.
+            A structured path toward technical mastery and leadership in cybersecurity research.
           </p>
         </div>
 

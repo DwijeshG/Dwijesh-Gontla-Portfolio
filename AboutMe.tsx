@@ -91,7 +91,7 @@ const AboutMe: React.FC = () => {
                   </p>
 
                   <p>
-                    In the technical realm, I treat systems architecture as a craft. I have achieved <span className="text-amber-400 font-bold">official C++ and Python certifications</span> from recognized institutions, where I spent hundreds of hours mastering enterprise network topologies, OSPF routing, and multi-layered security. This technical foundation led to the founding of <a href="/skills#defensive-grid-labs" className="text-amber-400 font-bold hover:underline">Defensive Grid Labs</a>, an elite cybersecurity firm focused on Digital Sovereignty and Zero-Knowledge Architecture, featuring the Nexus SOC and a 90/10 Hybrid Intelligence model, as well as professional certifications in web development from the <a href="/skills#html-5" className="text-amber-400 font-bold hover:underline">University of Michigan</a>.
+                    In the technical realm, I treat cybersecurity research as a craft. I have achieved <span className="text-amber-400 font-bold">official C++ and Python certifications</span> from recognized institutions. This technical foundation led to the development of <a href="/skills#defensive-grid-labs" className="text-amber-400 font-bold hover:underline">Defensive Grid Labs</a>, an elite cybersecurity firm focused on Digital Sovereignty and Zero-Knowledge Architecture, featuring the Nexus SOC and a 90/10 Hybrid Intelligence model, as well as professional certifications in web development from the <a href="/skills#html-5" className="text-amber-400 font-bold hover:underline">University of Michigan</a>.
                   </p>
 
                   <p>

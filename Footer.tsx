@@ -28,7 +28,7 @@ const Footer: React.FC = () => {
               whileHover={{ x: 5 }}
               className="text-brand-medium text-sm leading-relaxed max-w-xs transition-transform"
             >
-              Systems Architect & Strategic Leader bridging the gap between elite engineering and organizational excellence.
+              Cybersecurity Researcher focused on advanced threat mitigation and secure infrastructure development.
             </motion.p>
           </div>
 
@@ -95,7 +95,7 @@ const Footer: React.FC = () => {
             <div className="p-4 bg-amber-500/5 border border-amber-500/20 rounded-2xl">
               <div className="flex items-center gap-2 mb-2">
                 <div className="w-2 h-2 bg-amber-500 rounded-full animate-pulse"></div>
-                <span className="text-[10px] font-black uppercase tracking-widest text-amber-500">Systems Architecture</span>
+                <span className="text-[10px] font-black uppercase tracking-widest text-amber-500">Cybersecurity Research</span>
               </div>
               <p className="text-white/60 text-[10px] font-medium leading-relaxed">
                 Prioritizing advanced cybersecurity research and enterprise network development.
