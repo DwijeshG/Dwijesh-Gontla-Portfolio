@@ -4,36 +4,16 @@ import { motion, useSpring, useTransform, animate } from 'framer-motion';
 import { 
   GraduationCap, 
   Award, 
-  TrendingUp, 
   Star, 
   ShieldCheck, 
-  Anchor, 
   Users, 
   Trophy, 
-  Activity, 
   Zap, 
   Target,
-  ChevronRight,
   Sparkles,
   Globe
 } from 'lucide-react';
-import { 
-  Radar, 
-  RadarChart, 
-  PolarGrid, 
-  PolarAngleAxis, 
-  ResponsiveContainer 
-} from 'recharts';
 import Reveal from './Reveal';
-
-const RADAR_DATA = [
-  { subject: 'Logic', A: 120, fullMark: 150 },
-  { subject: 'Research', A: 110, fullMark: 150 },
-  { subject: 'Leadership', A: 130, fullMark: 150 },
-  { subject: 'Technical', A: 140, fullMark: 150 },
-  { subject: 'Strategy', A: 125, fullMark: 150 },
-  { subject: 'Ethics', A: 115, fullMark: 150 },
-];
 
 const NumberTicker = ({ value, decimal = 0 }: { value: number, decimal?: number }) => {
   const [displayValue, setDisplayValue] = useState(0);
@@ -103,7 +83,7 @@ const Academics: React.FC = () => {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="lg:col-span-8 royal-card p-10 md:p-20 rounded-[4rem] border-amber-500/20 relative overflow-hidden group bg-black/40 backdrop-blur-3xl"
+            className="lg:col-span-12 royal-card p-10 md:p-20 rounded-[4rem] border-amber-500/20 relative overflow-hidden group bg-black/40 backdrop-blur-3xl"
           >
             {/* HUD Elements */}
             <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
@@ -175,53 +155,6 @@ const Academics: React.FC = () => {
               </div>
             </div>
           </motion.div>
-
-          {/* Strategic Focus */}
-          <motion.div 
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="lg:col-span-4 royal-card p-10 rounded-[4rem] border-white/10 flex flex-col justify-between group bg-white/[0.02] backdrop-blur-3xl"
-          >
-            <div className="space-y-2">
-              <h3 className="text-white font-black text-2xl tracking-tighter uppercase italic">Strategic Focus</h3>
-              <p className="text-amber-500 text-[10px] font-black uppercase tracking-widest">Research & Development</p>
-            </div>
-
-            <div className="h-[300px] w-full mt-8">
-              <ResponsiveContainer width="100%" height="100%">
-                <RadarChart cx="50%" cy="50%" outerRadius="80%" data={[
-                  { subject: 'Systems', A: 145, fullMark: 150 },
-                  { subject: 'AI/ML', A: 120, fullMark: 150 },
-                  { subject: 'Security', A: 135, fullMark: 150 },
-                  { subject: 'Logic', A: 140, fullMark: 150 },
-                  { subject: 'Strategy', A: 130, fullMark: 150 },
-                  { subject: 'Ethics', A: 125, fullMark: 150 },
-                ]}>
-                  <PolarGrid stroke="rgba(255,255,255,0.1)" />
-                  <PolarAngleAxis dataKey="subject" tick={{ fill: 'rgba(255,255,255,0.5)', fontSize: 10, fontWeight: 900 }} />
-                  <Radar
-                    name="Dwijesh"
-                    dataKey="A"
-                    stroke="#f59e0b"
-                    fill="#f59e0b"
-                    fillOpacity={0.3}
-                  />
-                </RadarChart>
-              </ResponsiveContainer>
-            </div>
-
-            <div className="mt-8 pt-8 border-t border-white/5 space-y-4">
-              <div className="flex items-center justify-between">
-                <span className="text-white/40 text-[10px] font-black uppercase tracking-widest">Top Percentile</span>
-                <span className="text-amber-500 font-black tracking-tighter">&gt;99%</span>
-              </div>
-              <div className="flex items-center justify-between">
-                <span className="text-white/40 text-[10px] font-black uppercase tracking-widest">National Ranking</span>
-                <span className="text-amber-500 font-black tracking-tighter">Tier 1</span>
-              </div>
-            </div>
-          </motion.div>
         </div>
       </div>
 
@@ -289,10 +222,11 @@ const Academics: React.FC = () => {
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
                 {[
                   { label: "Human Geography", score: "5", sub: "Perfect Score", icon: <Globe size={20} /> },
-                  { label: "Computer Science", score: "5", sub: "Perfect Score", icon: <Zap size={20} /> }
+                  { label: "Computer Science", score: "5", sub: "Perfect Score", icon: <Zap size={20} /> },
+                  { label: "Rural & Small Town", score: "Award", sub: "College Board", icon: <Star size={20} /> }
                 ].map((item) => (
                   <div key={item.label} className="p-8 bg-white/5 rounded-[2.5rem] border border-white/5 hover:border-amber-500/30 transition-all group/item relative overflow-hidden">
                     <div className="absolute top-4 right-4 text-amber-500/20 group-hover/item:text-amber-500/40 transition-colors">
@@ -367,51 +301,6 @@ const Academics: React.FC = () => {
         </div>
       </div>
 
-      {/* NATIONWIDE RECRUITMENT - THE GOLDEN TICKET */}
-      <div className="space-y-24">
-        <div className="text-center space-y-6">
-          <Reveal>
-            <h3 className="text-6xl md:text-9xl font-black text-white tracking-tighter leading-none uppercase italic">
-              Nationwide <br />
-              <span className="gradient-gold">Recruitment</span>
-            </h3>
-          </Reveal>
-          <Reveal delay={0.2}>
-            <p className="text-brand-medium text-lg md:text-2xl font-bold tracking-tight max-w-3xl mx-auto italic">
-              Direct invitations from the nation's most prestigious institutions to join their elite summer cohorts.
-            </p>
-          </Reveal>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          <UniversityCard name="UT" color="#BF5700" label="UT Austin" delay={0.1} />
-          <UniversityCard name="S" color="#8C1515" label="Stanford" delay={0.2} />
-          <UniversityCard name="C" color="#800000" label="UChicago" delay={0.3} />
-          <UniversityCard name="B" color="#154734" label="Baylor" delay={0.4} />
-        </div>
-
-        <motion.div 
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="royal-card p-12 md:p-20 rounded-[4rem] border-white/5 bg-white/[0.01] backdrop-blur-3xl text-center space-y-10 relative overflow-hidden"
-        >
-          <div className="absolute inset-0 bg-linear-to-b from-amber-500/5 to-transparent"></div>
-          <div className="relative z-10 max-w-4xl mx-auto space-y-8">
-            <div className="w-20 h-20 bg-amber-500/10 rounded-full flex items-center justify-center text-amber-500 mx-auto shadow-2xl border border-amber-500/20">
-              <Target size={40} />
-            </div>
-            <h4 className="text-3xl md:text-5xl font-black text-white tracking-tighter uppercase italic">Strategic Selection</h4>
-            <p className="text-brand-light text-xl md:text-3xl font-bold leading-tight tracking-tight italic">
-              "While these institutions reached out with direct invitations, I maintained a strategic focus on <span className="text-amber-500">independent research</span> and <span className="text-amber-500">advanced systems development</span>."
-            </p>
-            <div className="pt-8">
-              <div className="h-px w-24 bg-amber-500/30 mx-auto"></div>
-            </div>
-          </div>
-        </motion.div>
-      </div>
-
       {/* INSTITUTIONAL VALIDATION - HONORS */}
       <div className="space-y-16">
         <div className="flex items-center gap-6 px-4">
@@ -419,14 +308,14 @@ const Academics: React.FC = () => {
           <div className="h-px grow bg-white/10"></div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {[
             { title: "NSLS", full: "Leadership Society", icon: <Users size={32} />, desc: "Inducted for academic excellence and leadership potential." },
-            { title: "PTK", full: "Phi Theta Kappa", icon: <Award size={32} />, desc: "Recognized for outstanding achievement at Austin Community College." },
-            { title: "SCLA", full: "Collegiate Society", icon: <Trophy size={32} />, desc: "Honored for exceptional performance and professional development." }
+            { title: "NJHS", full: "Junior Honor Society", icon: <Award size={32} />, desc: "Recognized for outstanding academic achievement, leadership, and service." }
           ].map((honor, idx) => (
             <motion.div
               key={honor.title}
+              id={honor.title.toLowerCase()}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}

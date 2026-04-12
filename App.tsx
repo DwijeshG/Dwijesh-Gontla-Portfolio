@@ -6,7 +6,6 @@ import Layout from './components/Layout';
 import ProjectDetail from './components/ProjectDetail';
 import AboutMe from './pages/AboutMe';
 import AcademicsPage from './pages/AcademicsPage';
-import CompetitionsPage from './pages/CompetitionsPage';
 import SkillsPage from './pages/SkillsPage';
 import FuturePage from './pages/FuturePage';
 import { Project } from './types';
@@ -36,7 +35,6 @@ const AppContent: React.FC = () => {
           <Routes>
             <Route path="/" element={<AboutMe />} />
             <Route path="/academics" element={<AcademicsPage />} />
-            <Route path="/competitions" element={<CompetitionsPage />} />
             <Route path="/skills" element={<SkillsPage onSelectProject={setActiveProject} />} />
             <Route path="/future" element={<FuturePage />} />
           </Routes>

@@ -33,22 +33,13 @@ const ACHIEVEMENTS = [
     image: "https://images.unsplash.com/photo-1589330694653-ded6df03f754?auto=format&fit=crop&q=80&w=1200&h=800"
   },
   {
-    to: "/competitions",
+    to: "/skills",
     label: "Competitive Excellence",
     title: "UIL State",
     subtitle: "Finalist",
     desc: "Commanding the UIL Website Team to a District Championship and a prestigious 3rd Place State finish.",
     icon: <Trophy size={32} />,
     image: "https://images.unsplash.com/photo-1551818255-e6e10975bc17?auto=format&fit=crop&q=80&w=1200&h=800"
-  },
-  {
-    to: "/skills",
-    label: "Cyber Sovereignty",
-    title: "Defensive Grid",
-    subtitle: "Labs",
-    desc: "Elite cybersecurity firm focused on Zero-Knowledge Architecture and Digital Sovereignty. Featuring Nexus SOC and a 90/10 Hybrid Intelligence model.",
-    icon: <Shield size={32} />,
-    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1200&h=800"
   },
   {
     to: "/",

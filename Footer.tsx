@@ -28,21 +28,21 @@ const Footer: React.FC = () => {
               whileHover={{ x: 5 }}
               className="text-brand-medium text-sm leading-relaxed max-w-xs transition-transform"
             >
-              Cybersecurity Researcher focused on advanced threat mitigation and secure infrastructure development.
+              Cybersecurity researcher and student scholar focused on Zero-Knowledge Architecture and systems security.
             </motion.p>
           </div>
 
           <div>
             <h4 className="text-white font-black uppercase tracking-widest text-xs mb-4 md:mb-6">Navigation</h4>
             <ul className="space-y-4">
-              {['About Me', 'Academics', 'Competitions', 'Skills', 'Future'].map((item) => (
+              {['About Me', 'Academics', 'Skills & Impact', 'Future'].map((item) => (
                 <motion.li 
                   key={item}
                   whileHover={{ x: 10 }}
                   className="transition-transform"
                 >
                   <a 
-                    href={item === 'About Me' ? '/' : `/${item.toLowerCase()}`} 
+                    href={item === 'About Me' ? '/' : `/${item.toLowerCase().split(' ')[0]}`} 
                     className="text-brand-medium hover:text-amber-500 transition-colors text-sm font-bold tracking-tight"
                   >
                     {item}
@@ -91,14 +91,14 @@ const Footer: React.FC = () => {
           </div>
 
           <div className="space-y-4 md:space-y-6">
-            <h4 className="text-white font-black uppercase tracking-widest text-xs mb-4 md:mb-6">Technical Focus</h4>
+            <h4 className="text-white font-black uppercase tracking-widest text-xs mb-4 md:mb-6">Research Focus</h4>
             <div className="p-4 bg-amber-500/5 border border-amber-500/20 rounded-2xl">
               <div className="flex items-center gap-2 mb-2">
                 <div className="w-2 h-2 bg-amber-500 rounded-full animate-pulse"></div>
-                <span className="text-[10px] font-black uppercase tracking-widest text-amber-500">Cybersecurity Research</span>
+                <span className="text-[10px] font-black uppercase tracking-widest text-amber-500">Zero-Knowledge Architecture</span>
               </div>
               <p className="text-white/60 text-[10px] font-medium leading-relaxed">
-                Prioritizing advanced cybersecurity research and enterprise network development.
+                Developing secure digital infrastructure through advanced cryptographic principles and systems research.
               </p>
             </div>
           </div>

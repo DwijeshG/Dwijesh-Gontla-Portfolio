@@ -132,52 +132,6 @@ const SkillsShowcase: React.FC = () => {
               <SkillCard key={skillIdx} skill={skill} index={skillIdx} />
             ))}
           </div>
-
-          {/* Cybersecurity Synthesis */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="mt-24 pt-16 border-t border-white/10"
-          >
-            <div className="flex items-center gap-4 mb-12">
-              <div className="h-px w-12 bg-amber-500"></div>
-              <h3 className="text-2xl md:text-3xl font-black tracking-tighter uppercase italic text-white">Cybersecurity Synthesis</h3>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="space-y-4">
-                <div className="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center text-amber-500 border border-white/10">
-                  <Code size={24} />
-                </div>
-                <h4 className="text-lg font-bold text-white uppercase tracking-widest">Code & Exploitation</h4>
-                <p className="text-sm text-gray-400 leading-relaxed">
-                  Mastering C++, Python, and web technologies (HTML/CSS/JS) allows me to understand software at its core. This foundation is critical for identifying vulnerabilities, reverse-engineering malware, and building secure-by-design applications from the ground up.
-                </p>
-              </div>
-              
-              <div className="space-y-4">
-                <div className="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center text-amber-500 border border-white/10">
-                  <Shield size={24} />
-                </div>
-                <h4 className="text-lg font-bold text-white uppercase tracking-widest">Network Defense</h4>
-                <p className="text-sm text-gray-400 leading-relaxed">
-                  Expertise in Cisco Networking, VLAN/OSPF, and Cloudflare provides the architectural knowledge needed to design zero-trust networks. Understanding how data flows enables me to secure perimeters, segment traffic, and mitigate advanced DDoS attacks.
-                </p>
-              </div>
-              
-              <div className="space-y-4">
-                <div className="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center text-amber-500 border border-white/10">
-                  <Target size={24} />
-                </div>
-                <h4 className="text-lg font-bold text-white uppercase tracking-widest">Strategic Risk</h4>
-                <p className="text-sm text-gray-400 leading-relaxed">
-                  Skills in Finance, System Analysis, and Strategic Planning bridge the gap between technical vulnerabilities and business impact. This allows me to assess organizational risk, manage security budgets, and align cyber defense with high-level business goals.
-                </p>
-              </div>
-            </div>
-          </motion.div>
         </div>
       </div>
     </section>

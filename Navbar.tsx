@@ -15,8 +15,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
   const navLinks = [
     { name: 'About Me', path: '/' },
     { name: 'Academic Excellence', path: '/academics' },
-    { name: 'Extracurriculars', path: '/competitions' },
-    { name: 'Skills', path: '/skills' },
+    { name: 'Skills & Impact', path: '/skills' },
     { name: 'Future', path: '/future' },
   ];
 
@@ -55,8 +54,8 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
               <img src="/logo.png" alt="DG Logo" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
             </div>
             <div className="hidden xl:flex flex-col">
-              <span className="text-white font-black text-[clamp(9px,0.7vw,12px)] uppercase tracking-widest leading-none">Cybersecurity Researcher</span>
-              <span className="text-amber-500 font-black text-[clamp(7px,0.5vw,9px)] uppercase tracking-[0.2em] mt-1">Specializing in Zero-Knowledge & AI Security</span>
+              <span className="text-white font-black text-[clamp(9px,0.7vw,12px)] uppercase tracking-widest leading-none">Dwijesh Gontla</span>
+              <span className="text-amber-500 font-black text-[clamp(7px,0.5vw,9px)] uppercase tracking-[0.2em] mt-1">Cybersecurity & Research Portfolio</span>
             </div>
           </Link>
           
